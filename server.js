@@ -18,6 +18,7 @@ app.get('/', (req, res) => {
 
 //Get request sending back json 
 app.get('/api/books', (req, res) => {
+    //JSON API
     const books = [
         {
             "title": "Learn Git in a Month of Lunches",
@@ -60,7 +61,7 @@ app.get('/api/books', (req, res) => {
     })
 })
 
-//Get Method sending back text
+//Get Method with callback function sending back text
 app.get('/datarep', (req, res) => {
     res.send('Hello from DataRep')
 })
@@ -76,16 +77,16 @@ app.get('/test', (req, res) => {
     res.sendFile(__dirname + '/index.html')
 })
 
-//Get Method sending back form input from html page
+//Get Method with callback function sending back text and form input
 app.get('/name', (req, res) => {
     console.log(req.query.fname);
-    res.send('Hello ' +req.query.fname+ '' + req.query.fname)
+    res.send('Hello ' + req.query.fname + '' + req.query.fname)
 })
 
-//Post Method posting form input from html page
+//Post Method with callback function sending back text and form input
 app.post('/name', (req, res) => {
     console.log(req.body)
-    res.send('Hello ' +req.body.fname+ ' ' + req.body.lname+ ' from post');
+    res.send('Hello ' + req.body.fname + ' ' + req.body.lname + ' from post');
 })
 
 
